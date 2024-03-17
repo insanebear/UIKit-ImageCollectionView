@@ -27,6 +27,8 @@
 		7B9A7DE72BA7115A0021B9B1 /* UIKit-ImageCollectionView+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DE62BA7115A0021B9B1 /* UIKit-ImageCollectionView+Bundle.swift */; };
 		7B9A7DED2BA71D990021B9B1 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DEC2BA71D990021B9B1 /* UIImageView.swift */; };
 		7B9A7DF02BA725C10021B9B1 /* ListPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DEF2BA725C10021B9B1 /* ListPhotos.swift */; };
+		7B9A7DF32BA7410A0021B9B1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DF22BA7410A0021B9B1 /* DetailViewController.swift */; };
+		7B9A7DF62BA741CC0021B9B1 /* ViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DF52BA741CC0021B9B1 /* ViewController+CollectionView.swift */; };
 		DC01B93A1B24A2AB1E945185 /* Pods_UIKit_ImageCollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B98DB180B2FB1DA6A46598A /* Pods_UIKit_ImageCollectionView.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,8 @@
 		7B9A7DE62BA7115A0021B9B1 /* UIKit-ImageCollectionView+Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit-ImageCollectionView+Bundle.swift"; sourceTree = "<group>"; };
 		7B9A7DEC2BA71D990021B9B1 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		7B9A7DEF2BA725C10021B9B1 /* ListPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotos.swift; sourceTree = "<group>"; };
+		7B9A7DF22BA7410A0021B9B1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		7B9A7DF52BA741CC0021B9B1 /* ViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		951F5D49F429DE33D7A9E55D /* Pods-UIKit-ImageCollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKit-ImageCollectionView.debug.xcconfig"; path = "Target Support Files/Pods-UIKit-ImageCollectionView/Pods-UIKit-ImageCollectionView.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,11 +97,10 @@
 		7B9A7DA92BA6D0350021B9B1 /* UIKit-ImageCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				7B9A7DC72BA6F0450021B9B1 /* Core */,
 				7B9A7DAA2BA6D0350021B9B1 /* AppDelegate.swift */,
 				7B9A7DAC2BA6D0350021B9B1 /* SceneDelegate.swift */,
-				7B9A7DAE2BA6D0350021B9B1 /* ViewController.swift */,
-				7B9A7DC32BA6E6D90021B9B1 /* CollectionViewDataSource.swift */,
+				7B9A7DC72BA6F0450021B9B1 /* Core */,
+				7B9A7DF12BA740DB0021B9B1 /* ViewControllers */,
 				7B9A7DBE2BA6DD9C0021B9B1 /* Views */,
 				7B9A7DB32BA6D0360021B9B1 /* Assets.xcassets */,
 				7B9A7DB52BA6D0360021B9B1 /* LaunchScreen.storyboard */,
@@ -127,6 +130,7 @@
 		7B9A7DC62BA6F0370021B9B1 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				7B9A7DC32BA6E6D90021B9B1 /* CollectionViewDataSource.swift */,
 				7B9A7DC52BA6F0060021B9B1 /* api */,
 			);
 			path = data;
@@ -202,6 +206,16 @@
 				7B9A7DEF2BA725C10021B9B1 /* ListPhotos.swift */,
 			);
 			path = parameters;
+			sourceTree = "<group>";
+		};
+		7B9A7DF12BA740DB0021B9B1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7B9A7DAE2BA6D0350021B9B1 /* ViewController.swift */,
+				7B9A7DF52BA741CC0021B9B1 /* ViewController+CollectionView.swift */,
+				7B9A7DF22BA7410A0021B9B1 /* DetailViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		7E4A42EAFC7DE1AE5BE82E2B /* Pods */ = {
@@ -343,8 +357,10 @@
 				7B9A7DD82BA702F00021B9B1 /* ListPhotosRequest.swift in Sources */,
 				7B9A7DAF2BA6D0350021B9B1 /* ViewController.swift in Sources */,
 				7B9A7DDD2BA706C20021B9B1 /* Photo.swift in Sources */,
+				7B9A7DF62BA741CC0021B9B1 /* ViewController+CollectionView.swift in Sources */,
 				7B9A7DF02BA725C10021B9B1 /* ListPhotos.swift in Sources */,
 				7B9A7DAB2BA6D0350021B9B1 /* AppDelegate.swift in Sources */,
+				7B9A7DF32BA7410A0021B9B1 /* DetailViewController.swift in Sources */,
 				7B9A7DED2BA71D990021B9B1 /* UIImageView.swift in Sources */,
 				7B9A7DE72BA7115A0021B9B1 /* UIKit-ImageCollectionView+Bundle.swift in Sources */,
 				7B9A7DD02BA6F2560021B9B1 /* RequestManager.swift in Sources */,
