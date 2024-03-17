@@ -10,7 +10,7 @@ import SnapKit
 
 class ViewController: UIViewController {
     var collectionView: UICollectionView!
-    var dataSource: DataSource!
+    var dataSource: CollectionViewDataSource!
     let dataList: [Int] = {
         return (1...100).map { $0 }
     } ()
@@ -56,16 +56,16 @@ class ViewController: UIViewController {
 }
 // MARK: - DataSource
 extension ViewController {
-    typealias DataSource = UICollectionViewDiffableDataSource<Int, Int>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Int>
+    
     
     func configureDataSource() {
-        // register a cell for the collection view
-        self.collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "\(CollectionViewCell.self)")
         
         // create a DataSource
-        self.dataSource = DataSource(collectionView: self.collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(CollectionViewCell.self)", for: indexPath) as? CollectionViewCell else {
+        self.dataSource = CollectionViewDataSource(collectionView: self.collectionView,
+                                                   cellProvider: { collectionView, indexPath, itemIdentifier in
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(CollectionViewCell.self)", for: indexPath) as? CollectionViewCell
+            else {
                 fatalError("Cannot create a cell for UICollectionView")
             }
             
@@ -76,15 +76,6 @@ extension ViewController {
         
         // set a data source for the collectionView
         self.collectionView.dataSource = self.dataSource
-        updateSnapshot()
-        
-    }
-    
-    func updateSnapshot() {
-        var snapshot = Snapshot()
-        snapshot.appendSections([0])
-        snapshot.appendItems(dataList)
-        
-        dataSource.apply(snapshot, animatingDifferences: false)
+        self.dataSource.updateSnapshot(dataList: dataList)
     }
 }
