@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         
         configureDataSource()
         
-        requestData()
+        requestData(numOfPhotos: 100)
     }
     
     private func setupCollectionViewUI() {
@@ -86,17 +86,30 @@ extension ViewController {
 }
 
 extension ViewController {
-    func requestData() {
+    func requestData(numOfPhotos: Int = 10) {
+        /// Unsplash API provides maxium 30 photos at a request. (`perPage`)
         let rm = RequestManager.shared
-        let listPhotosParam = ListPhotos(page: 1, perPage: 10, orderBy: .latest)
-        let request = ListPhotosRequest(parameters: listPhotosParam)
+        var perPage = numOfPhotos > 30 ? 30 : numOfPhotos
+        var currentPage = 1
         
         Task {
-            do {
-                let response = try await rm.perform(request)
-                photoList = response // update the list of Photos
-            } catch (let error) {
-                debugPrint(error)
+            while photoList.count < numOfPhotos {
+                do {
+                    // Repeat requests until photoList contains the desired number of photos.
+                    let listPhotosParam = ListPhotos(page: currentPage, perPage: perPage, orderBy: .latest)
+                    let request = ListPhotosRequest(parameters: listPhotosParam)
+                    
+                    let photos = try await rm.perform(request)
+                    photoList.append(contentsOf: photos) // append the list of Photos
+                    
+                    currentPage += 1
+                    
+                    let leftover = numOfPhotos - photoList.count
+                    perPage = leftover > 30 ? 30 : leftover
+                    
+                } catch (let error) {
+                    debugPrint(error)
+                }
             }
         }
     }
