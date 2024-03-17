@@ -15,6 +15,8 @@ class ViewController: UIViewController {
         return (1...100).map { $0 }
     } ()
     
+    var photoList: [Photo] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -22,6 +24,10 @@ class ViewController: UIViewController {
         setupCollectionViewUI()
         
         configureDataSource()
+        
+        requestData()
+        
+        print(Bundle.main.apiKey)
     }
     
     private func setupCollectionViewUI() {
@@ -54,9 +60,9 @@ class ViewController: UIViewController {
         return layout
     }
 }
+
 // MARK: - DataSource
 extension ViewController {
-    
     
     func configureDataSource() {
         
@@ -77,5 +83,20 @@ extension ViewController {
         // set a data source for the collectionView
         self.collectionView.dataSource = self.dataSource
         self.dataSource.updateSnapshot(dataList: dataList)
+    }
+}
+
+extension ViewController {
+    func requestData() {
+        let rm = RequestManager.shared
+        
+        Task {
+            do {
+                let response = try await rm.perform(PhotoRequest())
+                photoList = response
+            } catch (let error) {
+                debugPrint(error)
+            }
+        }
     }
 }
