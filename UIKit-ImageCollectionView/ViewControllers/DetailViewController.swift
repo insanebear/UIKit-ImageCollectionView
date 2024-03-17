@@ -8,14 +8,37 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    var photo: Photo? = nil {
+        didSet { updateContent() }
+    }
+    
+    let imageView: UIImageView = {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
+        return view
+    } ()
+
     override func viewDidLoad() {
         self.view.backgroundColor = .white
-        let label = UILabel()
         
-        self.view.addSubview(label)
+        self.view.addSubview(imageView)
         
-        label.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        imageView.snp.makeConstraints { make in
+            make.width.height.equalTo(Device.width)
+            make.top.equalTo(self.view.safeAreaLayoutGuide)
         }
+    }
+    
+    func configure(photo: Photo) {
+        self.photo = photo
+    }
+    
+    private func updateContent() {
+        guard let photo = self.photo else {
+            imageView.setDefaultImage()
+            return
+        }
+        imageView.imageFromUrlString(photo.urls.regular)
     }
 }

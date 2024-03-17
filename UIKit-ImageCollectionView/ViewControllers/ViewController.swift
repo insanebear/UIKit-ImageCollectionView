@@ -25,6 +25,11 @@ class ViewController: UIViewController {
         setupCollectionView()
         requestData(numOfPhotos: 100)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // remove "Back" string in the backButton
+        self.navigationItem.backButtonTitle = ""
+    }
 }
 
 extension ViewController {

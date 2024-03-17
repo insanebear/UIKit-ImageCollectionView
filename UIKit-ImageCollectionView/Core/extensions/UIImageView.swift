@@ -8,17 +8,20 @@
 import UIKit
 
 extension UIImageView {
-    func imageFromUrlString(_ urlString: String) {
+    func setDefaultImage() {
         let defaultImage = UIImage(systemName: "questionmark.square.dashed")
-        
+        self.image = defaultImage
+    }
+    
+    func imageFromUrlString(_ urlString: String) {
         guard let url = URL(string: urlString) else {
-            self.image = defaultImage
+            setDefaultImage()
             return
         }
         
         DispatchQueue.global(qos: .userInitiated).async {
             guard let data = try? Data(contentsOf: url) else {
-                self.image = defaultImage
+                self.setDefaultImage()
                 return
             }
             

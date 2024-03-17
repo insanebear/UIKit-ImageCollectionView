@@ -76,6 +76,10 @@ extension ViewController {
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(DetailViewController(), animated: true)
+        let photo = photoList[indexPath.row]
+        let vc = DetailViewController()
+        vc.configure(photo: photo)
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
