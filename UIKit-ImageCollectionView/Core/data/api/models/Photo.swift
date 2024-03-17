@@ -7,18 +7,27 @@
 
 import Foundation
 
-struct Photo: Decodable, Hashable {
-    
-    static func == (lhs: Photo, rhs: Photo) -> Bool {
-        lhs.id == rhs.id
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
+struct Photo: Decodable {
+    let uuid = UUID() // to make Photo struct unique.
     
     let id: String
     let width: Int
     let height: Int
     let urls: PhotoURLs
+    
+    private enum CodingKeys: String, CodingKey {
+        // to supress the warning that suggest to modify `let uuid` to `var`
+        case id, width, height, urls
+    }
+      
+}
+
+extension Photo: Hashable {
+    static func == (lhs: Photo, rhs: Photo) -> Bool {
+        lhs.uuid == rhs.uuid
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(uuid)
+    }
 }
