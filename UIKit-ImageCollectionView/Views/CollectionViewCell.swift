@@ -10,15 +10,16 @@ import UIKit
 class CollectionViewCell: UICollectionViewCell {
     static let identifier = "CollectionViewCell"
     
-    let label = UILabel()
+    var photo: Photo? = nil {
+        didSet { updateContent() }
+    }
+    let imageView = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        label.textColor = .black
-        
-        self.addSubview(label)
-        label.snp.makeConstraints { make in
+        self.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
@@ -27,11 +28,20 @@ class CollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(text: String) {
-        label.text = text
+    func configure(photo: Photo) {
+        self.photo = photo
     }
     
     override func prepareForReuse() {
-        label.text = ""
+        photo = nil
+    }
+    
+    private func updateContent() {
+        guard let photo = self.photo else {
+            imageView.imageFromUrlString("") // set a default image
+            return
+        }
+        
+        imageView.imageFromUrlString(photo.urls.small)
     }
 }

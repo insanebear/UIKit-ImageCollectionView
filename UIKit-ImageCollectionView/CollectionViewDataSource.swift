@@ -7,12 +7,12 @@
 
 import UIKit
 
-class CollectionViewDataSource: UICollectionViewDiffableDataSource<Int, Int> {
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Int>
+class CollectionViewDataSource: UICollectionViewDiffableDataSource<Int, Photo> {
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Photo>
     
-    private let cellProvider: (UICollectionView, IndexPath, Int) -> UICollectionViewCell?
+    private let cellProvider: (UICollectionView, IndexPath, Photo) -> UICollectionViewCell?
 
-    override init(collectionView: UICollectionView, cellProvider: @escaping (UICollectionView, IndexPath, Int) -> UICollectionViewCell?) {
+    override init(collectionView: UICollectionView, cellProvider: @escaping (UICollectionView, IndexPath, Photo) -> UICollectionViewCell?) {
         self.cellProvider = cellProvider
         
         super.init(collectionView: collectionView) { collectionView, indexPath, itemIdentifier in
@@ -24,7 +24,7 @@ class CollectionViewDataSource: UICollectionViewDiffableDataSource<Int, Int> {
     }
 
     
-    func updateSnapshot(dataList: [Int]) {
+    func updateSnapshot(dataList: [Photo]) {
         var snapshot = Snapshot()
         snapshot.appendSections([0])
         snapshot.appendItems(dataList)

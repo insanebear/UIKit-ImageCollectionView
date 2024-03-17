@@ -7,11 +7,11 @@
 
 import Alamofire
 
-struct PhotoRequest: RequestProtocol {
+struct ListPhotosRequest: RequestProtocol {
     
     typealias Response = [Photo]
     
-    typealias Parameters = String
+    typealias Parameters = ListPhotos
     
     var endpoint: String = "/photos"
     
@@ -22,7 +22,7 @@ struct PhotoRequest: RequestProtocol {
     var headers: Alamofire.HTTPHeaders = ["Authorization": "\(APIConstants.apiKey)",
                                           "Accept": "application/json"]
     
-    var encoder: Alamofire.ParameterEncoder? = JSONParameterEncoder.default
+    var encoder: Alamofire.ParameterEncoder? = URLEncodedFormParameterEncoder.default
     
     
 }

@@ -20,11 +20,13 @@
 		7B9A7DD22BA6F2AE0021B9B1 /* APIManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DD12BA6F2AE0021B9B1 /* APIManagerProtocol.swift */; };
 		7B9A7DD42BA6F2F10021B9B1 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DD32BA6F2F10021B9B1 /* APIManager.swift */; };
 		7B9A7DD62BA6FC470021B9B1 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DD52BA6FC470021B9B1 /* APIConstants.swift */; };
-		7B9A7DD82BA702F00021B9B1 /* PhotoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DD72BA702F00021B9B1 /* PhotoRequest.swift */; };
+		7B9A7DD82BA702F00021B9B1 /* ListPhotosRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DD72BA702F00021B9B1 /* ListPhotosRequest.swift */; };
 		7B9A7DDD2BA706C20021B9B1 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DDC2BA706C20021B9B1 /* Photo.swift */; };
 		7B9A7DE02BA707400021B9B1 /* PhotoURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DDF2BA707400021B9B1 /* PhotoURLs.swift */; };
 		7B9A7DE52BA70FE20021B9B1 /* UnsplashInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B9A7DE42BA70FE20021B9B1 /* UnsplashInfo.plist */; };
 		7B9A7DE72BA7115A0021B9B1 /* UIKit-ImageCollectionView+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DE62BA7115A0021B9B1 /* UIKit-ImageCollectionView+Bundle.swift */; };
+		7B9A7DED2BA71D990021B9B1 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DEC2BA71D990021B9B1 /* UIImageView.swift */; };
+		7B9A7DF02BA725C10021B9B1 /* ListPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DEF2BA725C10021B9B1 /* ListPhotos.swift */; };
 		DC01B93A1B24A2AB1E945185 /* Pods_UIKit_ImageCollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B98DB180B2FB1DA6A46598A /* Pods_UIKit_ImageCollectionView.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,11 +48,13 @@
 		7B9A7DD12BA6F2AE0021B9B1 /* APIManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerProtocol.swift; sourceTree = "<group>"; };
 		7B9A7DD32BA6F2F10021B9B1 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		7B9A7DD52BA6FC470021B9B1 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
-		7B9A7DD72BA702F00021B9B1 /* PhotoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRequest.swift; sourceTree = "<group>"; };
+		7B9A7DD72BA702F00021B9B1 /* ListPhotosRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotosRequest.swift; sourceTree = "<group>"; };
 		7B9A7DDC2BA706C20021B9B1 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		7B9A7DDF2BA707400021B9B1 /* PhotoURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoURLs.swift; sourceTree = "<group>"; };
 		7B9A7DE42BA70FE20021B9B1 /* UnsplashInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UnsplashInfo.plist; sourceTree = "<group>"; };
 		7B9A7DE62BA7115A0021B9B1 /* UIKit-ImageCollectionView+Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit-ImageCollectionView+Bundle.swift"; sourceTree = "<group>"; };
+		7B9A7DEC2BA71D990021B9B1 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		7B9A7DEF2BA725C10021B9B1 /* ListPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotos.swift; sourceTree = "<group>"; };
 		951F5D49F429DE33D7A9E55D /* Pods-UIKit-ImageCollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKit-ImageCollectionView.debug.xcconfig"; path = "Target Support Files/Pods-UIKit-ImageCollectionView/Pods-UIKit-ImageCollectionView.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +135,8 @@
 		7B9A7DC72BA6F0450021B9B1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7B9A7DEB2BA71D8B0021B9B1 /* extensions */,
+				7B9A7DE82BA718FE0021B9B1 /* domain */,
 				7B9A7DC62BA6F0370021B9B1 /* data */,
 			);
 			path = Core;
@@ -151,7 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				7B9A7DCD2BA6F1AA0021B9B1 /* RequestProtocol.swift */,
-				7B9A7DD72BA702F00021B9B1 /* PhotoRequest.swift */,
+				7B9A7DD72BA702F00021B9B1 /* ListPhotosRequest.swift */,
+				7B9A7DEE2BA725A50021B9B1 /* parameters */,
 			);
 			path = request;
 			sourceTree = "<group>";
@@ -172,6 +179,29 @@
 				7B9A7DDF2BA707400021B9B1 /* PhotoURLs.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		7B9A7DE82BA718FE0021B9B1 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		7B9A7DEB2BA71D8B0021B9B1 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7B9A7DEC2BA71D990021B9B1 /* UIImageView.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		7B9A7DEE2BA725A50021B9B1 /* parameters */ = {
+			isa = PBXGroup;
+			children = (
+				7B9A7DEF2BA725C10021B9B1 /* ListPhotos.swift */,
+			);
+			path = parameters;
 			sourceTree = "<group>";
 		};
 		7E4A42EAFC7DE1AE5BE82E2B /* Pods */ = {
@@ -310,10 +340,12 @@
 				7B9A7DD62BA6FC470021B9B1 /* APIConstants.swift in Sources */,
 				7B9A7DD22BA6F2AE0021B9B1 /* APIManagerProtocol.swift in Sources */,
 				7B9A7DD42BA6F2F10021B9B1 /* APIManager.swift in Sources */,
-				7B9A7DD82BA702F00021B9B1 /* PhotoRequest.swift in Sources */,
+				7B9A7DD82BA702F00021B9B1 /* ListPhotosRequest.swift in Sources */,
 				7B9A7DAF2BA6D0350021B9B1 /* ViewController.swift in Sources */,
 				7B9A7DDD2BA706C20021B9B1 /* Photo.swift in Sources */,
+				7B9A7DF02BA725C10021B9B1 /* ListPhotos.swift in Sources */,
 				7B9A7DAB2BA6D0350021B9B1 /* AppDelegate.swift in Sources */,
+				7B9A7DED2BA71D990021B9B1 /* UIImageView.swift in Sources */,
 				7B9A7DE72BA7115A0021B9B1 /* UIKit-ImageCollectionView+Bundle.swift in Sources */,
 				7B9A7DD02BA6F2560021B9B1 /* RequestManager.swift in Sources */,
 				7B9A7DC02BA6DDB70021B9B1 /* CollectionViewCell.swift in Sources */,
