@@ -11,11 +11,12 @@ import SnapKit
 class ViewController: UIViewController {
     var collectionView: UICollectionView!
     var dataSource: CollectionViewDataSource!
-    let dataList: [Int] = {
-        return (1...100).map { $0 }
-    } ()
     
-    var photoList: [Photo] = []
+    var photoList: [Photo] = [] {
+        didSet {
+            self.dataSource.updateSnapshot(dataList: photoList)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +27,6 @@ class ViewController: UIViewController {
         configureDataSource()
         
         requestData()
-        
-        print(Bundle.main.apiKey)
     }
     
     private func setupCollectionViewUI() {
@@ -75,25 +74,27 @@ extension ViewController {
                 fatalError("Cannot create a cell for UICollectionView")
             }
             
-            cell.configure(text: "\(itemIdentifier)")
+            cell.configure(photo: itemIdentifier)
             
             return cell
         })
         
         // set a data source for the collectionView
         self.collectionView.dataSource = self.dataSource
-        self.dataSource.updateSnapshot(dataList: dataList)
+        self.dataSource.updateSnapshot(dataList: photoList)
     }
 }
 
 extension ViewController {
     func requestData() {
         let rm = RequestManager.shared
+        let listPhotosParam = ListPhotos(page: 1, perPage: 10, orderBy: .latest)
+        let request = ListPhotosRequest(parameters: listPhotosParam)
         
         Task {
             do {
-                let response = try await rm.perform(PhotoRequest())
-                photoList = response
+                let response = try await rm.perform(request)
+                photoList = response // update the list of Photos
             } catch (let error) {
                 debugPrint(error)
             }
