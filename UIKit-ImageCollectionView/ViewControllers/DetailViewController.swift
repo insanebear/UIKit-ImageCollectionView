@@ -8,25 +8,33 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    var photo: Photo? = nil {
+    private var photo: Photo? = nil {
         didSet { updateContent() }
     }
     
-    let imageView: UIImageView = {
+    private let imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         return view
     } ()
+    
+    private let userProfileView = UserProfileView()
 
     override func viewDidLoad() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .backgroundColor
         
         self.view.addSubview(imageView)
+        self.view.addSubview(userProfileView)
         
         imageView.snp.makeConstraints { make in
             make.width.height.equalTo(Device.width)
             make.top.equalTo(self.view.safeAreaLayoutGuide)
+        }
+        
+        userProfileView.snp.makeConstraints { make in
+            make.top.equalTo(self.imageView.snp.bottom).inset(-Spacing.standard)
+            make.horizontalEdges.equalToSuperview().inset(Spacing.standard)
         }
     }
     
@@ -40,7 +48,6 @@ class DetailViewController: UIViewController {
             return
         }
         imageView.imageFromUrlString(photo.urls.regular)
-        
-        print(photo.user.username)
+        userProfileView.configure(user: photo.user)
     }
 }

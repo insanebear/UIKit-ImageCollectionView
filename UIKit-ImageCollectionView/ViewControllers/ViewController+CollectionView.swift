@@ -79,7 +79,7 @@ extension ViewController: UICollectionViewDelegate {
         let photo = photoList[indexPath.row]
         let vc = DetailViewController()
         vc.configure(photo: photo)
-        self.navigationController?.pushViewController(vc, animated: true)
         
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
