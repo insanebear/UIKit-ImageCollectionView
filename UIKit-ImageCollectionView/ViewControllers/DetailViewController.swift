@@ -40,5 +40,7 @@ class DetailViewController: UIViewController {
             return
         }
         imageView.imageFromUrlString(photo.urls.regular)
+        
+        print(photo.user.username)
     }
 }

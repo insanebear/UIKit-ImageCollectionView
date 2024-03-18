@@ -14,10 +14,14 @@ struct Photo: Decodable {
     let width: Int
     let height: Int
     let urls: PhotoURLs
+    let createdAt: String
+    let likes: Int
+    let description: String?
+    let user: User
     
     private enum CodingKeys: String, CodingKey {
-        // to supress the warning that suggest to modify `let uuid` to `var`
-        case id, width, height, urls
+        case id, width, height, urls, likes, description, user
+        case createdAt = "created_at"
     }
       
 }

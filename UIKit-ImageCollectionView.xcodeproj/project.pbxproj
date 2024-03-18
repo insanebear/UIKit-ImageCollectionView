@@ -30,6 +30,7 @@
 		7B9A7DF32BA7410A0021B9B1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DF22BA7410A0021B9B1 /* DetailViewController.swift */; };
 		7B9A7DF62BA741CC0021B9B1 /* ViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DF52BA741CC0021B9B1 /* ViewController+CollectionView.swift */; };
 		7B9A7DF92BA746900021B9B1 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DF82BA746900021B9B1 /* Device.swift */; };
+		7B9A7DFB2BA84E1D0021B9B1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DFA2BA84E1D0021B9B1 /* User.swift */; };
 		DC01B93A1B24A2AB1E945185 /* Pods_UIKit_ImageCollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B98DB180B2FB1DA6A46598A /* Pods_UIKit_ImageCollectionView.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		7B9A7DF22BA7410A0021B9B1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7B9A7DF52BA741CC0021B9B1 /* ViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		7B9A7DF82BA746900021B9B1 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		7B9A7DFA2BA84E1D0021B9B1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		951F5D49F429DE33D7A9E55D /* Pods-UIKit-ImageCollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKit-ImageCollectionView.debug.xcconfig"; path = "Target Support Files/Pods-UIKit-ImageCollectionView/Pods-UIKit-ImageCollectionView.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +185,7 @@
 			children = (
 				7B9A7DDC2BA706C20021B9B1 /* Photo.swift */,
 				7B9A7DDF2BA707400021B9B1 /* PhotoURLs.swift */,
+				7B9A7DFA2BA84E1D0021B9B1 /* User.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				7B9A7DCC2BA6F1700021B9B1 /* RequestManagerProtocol.swift in Sources */,
 				7B9A7DCE2BA6F1AA0021B9B1 /* RequestProtocol.swift in Sources */,
 				7B9A7DF92BA746900021B9B1 /* Device.swift in Sources */,
+				7B9A7DFB2BA84E1D0021B9B1 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
