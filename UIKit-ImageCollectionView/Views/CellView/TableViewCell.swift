@@ -10,8 +10,6 @@ import UIKit
 class TableViewCell: UITableViewCell {
     static let identifier = "TableViewCell"
     
-    let photoSize: CGFloat = Device.width/5
-    
     private var photo: Photo? = nil {
         didSet { updateContent() }
     }
@@ -112,13 +110,8 @@ class TableViewCell: UITableViewCell {
         }
         customImageView.imageFromUrlString(photo.urls.small)
         usernameLabel.text = photo.user.username
-        createdAtLabel.text = photo.createdAt
+        createdAtLabel.text = photo.createdAt.convertDateString()
         likeLabel.configure(text: "\(photo.likes)")
-        
-//        customImageView.snp.makeConstraints { make in
-//            make.width.equalTo(photoSize)
-//        }
-//
     }
     
     func configure(photo: Photo) {

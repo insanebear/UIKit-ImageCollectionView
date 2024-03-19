@@ -40,6 +40,7 @@
 		7B9A7E0C2BA9A0480021B9B1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7E0B2BA9A0480021B9B1 /* TableViewController.swift */; };
 		7B9A7E102BA9B0520021B9B1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7E0F2BA9B0520021B9B1 /* TableViewCell.swift */; };
 		7B9A7E132BA9BE0A0021B9B1 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7E122BA9BE0A0021B9B1 /* TableViewDataSource.swift */; };
+		7B9A7E152BA9CF730021B9B1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7E142BA9CF730021B9B1 /* String.swift */; };
 		DC01B93A1B24A2AB1E945185 /* Pods_UIKit_ImageCollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B98DB180B2FB1DA6A46598A /* Pods_UIKit_ImageCollectionView.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		7B9A7E0B2BA9A0480021B9B1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7B9A7E0F2BA9B0520021B9B1 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		7B9A7E122BA9BE0A0021B9B1 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		7B9A7E142BA9CF730021B9B1 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		951F5D49F429DE33D7A9E55D /* Pods-UIKit-ImageCollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKit-ImageCollectionView.debug.xcconfig"; path = "Target Support Files/Pods-UIKit-ImageCollectionView/Pods-UIKit-ImageCollectionView.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -225,6 +227,7 @@
 				7B9A7DEC2BA71D990021B9B1 /* UIImageView.swift */,
 				7B9A7E012BA861010021B9B1 /* UIStackView.swift */,
 				7B9A7E032BA8651F0021B9B1 /* UIColor.swift */,
+				7B9A7E142BA9CF730021B9B1 /* String.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				7B9A7DD62BA6FC470021B9B1 /* APIConstants.swift in Sources */,
 				7B9A7DD22BA6F2AE0021B9B1 /* APIManagerProtocol.swift in Sources */,
 				7B9A7DD42BA6F2F10021B9B1 /* APIManager.swift in Sources */,
+				7B9A7E152BA9CF730021B9B1 /* String.swift in Sources */,
 				7B9A7E0A2BA99FE20021B9B1 /* TabBarViewController.swift in Sources */,
 				7B9A7DD82BA702F00021B9B1 /* ListPhotosRequest.swift in Sources */,
 				7B9A7E132BA9BE0A0021B9B1 /* TableViewDataSource.swift in Sources */,
