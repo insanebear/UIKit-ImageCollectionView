@@ -26,7 +26,7 @@ class TabBarViewController: UITabBarController {
 
 extension TabBarViewController {
     enum TabItem: CaseIterable {
-        case collection, table
+        case table, collection 
         
         var title: String {
             switch self {

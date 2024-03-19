@@ -18,8 +18,7 @@ extension CollectionViewController {
         self.view.addSubview(collectionView)
         
         collectionView.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview()
-            make.verticalEdges.equalTo(self.view.safeAreaLayoutGuide)
+            make.edges.equalTo(self.view.safeAreaLayoutGuide)
         }
         
         // delegate and dataSource
