@@ -65,7 +65,7 @@ class UserProfileView: UIView {
             make.leading.top.equalToSuperview()
             make.width.equalTo(UserProfileView.photoSize)
         }
-        userPhotoView.layer.cornerRadius = UserProfileView.photoSize
+        userPhotoView.layer.cornerRadius = UserProfileView.photoSize / 2
         userPhotoView.clipsToBounds = true
     }
     

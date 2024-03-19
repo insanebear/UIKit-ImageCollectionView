@@ -28,7 +28,7 @@ class CollectionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         // remove "Back" string in the backButton
-        self.navigationItem.backButtonTitle = ""
+        self.tabBarController?.navigationItem.backButtonTitle = ""
     }
 }
 
