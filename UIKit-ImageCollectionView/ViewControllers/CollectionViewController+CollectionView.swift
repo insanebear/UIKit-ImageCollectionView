@@ -1,5 +1,5 @@
 //
-//  ViewController+CollectionView.swift
+//  CollectionViewController+CollectionView.swift
 //  UIKit-ImageCollectionView
 //
 //  Created by Yurim Jayde Jeong on 3/18/24.
@@ -8,7 +8,7 @@
 import UIKit
 
 // MARK: - DataSource
-extension ViewController {
+extension CollectionViewController {
     
     func setupCollectionView() {
         // layout
@@ -74,7 +74,7 @@ extension ViewController {
 
 // MARK: - Delegate
 
-extension ViewController: UICollectionViewDelegate {
+extension CollectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let photo = photoList[indexPath.row]
         let vc = DetailViewController()
