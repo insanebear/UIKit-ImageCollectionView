@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // change the navigation bar appearance.
         UINavigationBar.appearance().tintColor = UIColor.systemOrange
-        UINavigationBar.appearance().shadowImage = UIImage()
         
         return true
     }

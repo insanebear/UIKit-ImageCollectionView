@@ -13,7 +13,12 @@ class CollectionViewCell: UICollectionViewCell {
     var photo: Photo? = nil {
         didSet { updateContent() }
     }
-    let imageView = UIImageView()
+    let imageView: UIImageView = {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
+        return view
+    } ()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,7 +46,6 @@ class CollectionViewCell: UICollectionViewCell {
             imageView.imageFromUrlString("") // set a default image
             return
         }
-        
         imageView.imageFromUrlString(photo.urls.small)
     }
 }
