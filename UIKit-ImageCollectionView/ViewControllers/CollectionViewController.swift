@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CollectionViewController.swift
 //  UIKit-ImageCollectionView
 //
 //  Created by Yurim Jayde Jeong on 3/17/24.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+class CollectionViewController: UIViewController {
     var collectionView: UICollectionView!
     var dataSource: CollectionViewDataSource!
     
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController {
+extension CollectionViewController {
     func requestData(numOfPhotos: Int = 10) {
         /// Unsplash API provides maxium 30 photos at a request. (`perPage`)
         let rm = RequestManager.shared

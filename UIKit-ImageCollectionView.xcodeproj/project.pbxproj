@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7B9A7DAB2BA6D0350021B9B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DAA2BA6D0350021B9B1 /* AppDelegate.swift */; };
 		7B9A7DAD2BA6D0350021B9B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DAC2BA6D0350021B9B1 /* SceneDelegate.swift */; };
-		7B9A7DAF2BA6D0350021B9B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DAE2BA6D0350021B9B1 /* ViewController.swift */; };
+		7B9A7DAF2BA6D0350021B9B1 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DAE2BA6D0350021B9B1 /* CollectionViewController.swift */; };
 		7B9A7DB42BA6D0360021B9B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B9A7DB32BA6D0360021B9B1 /* Assets.xcassets */; };
 		7B9A7DB72BA6D0360021B9B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B9A7DB52BA6D0360021B9B1 /* LaunchScreen.storyboard */; };
 		7B9A7DC02BA6DDB70021B9B1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DBF2BA6DDB70021B9B1 /* CollectionViewCell.swift */; };
@@ -28,7 +28,7 @@
 		7B9A7DED2BA71D990021B9B1 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DEC2BA71D990021B9B1 /* UIImageView.swift */; };
 		7B9A7DF02BA725C10021B9B1 /* ListPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DEF2BA725C10021B9B1 /* ListPhotos.swift */; };
 		7B9A7DF32BA7410A0021B9B1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DF22BA7410A0021B9B1 /* DetailViewController.swift */; };
-		7B9A7DF62BA741CC0021B9B1 /* ViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DF52BA741CC0021B9B1 /* ViewController+CollectionView.swift */; };
+		7B9A7DF62BA741CC0021B9B1 /* CollectionViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DF52BA741CC0021B9B1 /* CollectionViewController+CollectionView.swift */; };
 		7B9A7DF92BA746900021B9B1 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DF82BA746900021B9B1 /* Device.swift */; };
 		7B9A7DFB2BA84E1D0021B9B1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DFA2BA84E1D0021B9B1 /* User.swift */; };
 		7B9A7DFE2BA855150021B9B1 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7DFD2BA855150021B9B1 /* UserProfileView.swift */; };
@@ -36,6 +36,8 @@
 		7B9A7E022BA861010021B9B1 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7E012BA861010021B9B1 /* UIStackView.swift */; };
 		7B9A7E042BA8651F0021B9B1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7E032BA8651F0021B9B1 /* UIColor.swift */; };
 		7B9A7E082BA86E390021B9B1 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7E072BA86E390021B9B1 /* Spacing.swift */; };
+		7B9A7E0A2BA99FE20021B9B1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7E092BA99FE20021B9B1 /* TabBarViewController.swift */; };
+		7B9A7E0C2BA9A0480021B9B1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A7E0B2BA9A0480021B9B1 /* TableViewController.swift */; };
 		DC01B93A1B24A2AB1E945185 /* Pods_UIKit_ImageCollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B98DB180B2FB1DA6A46598A /* Pods_UIKit_ImageCollectionView.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +47,7 @@
 		7B9A7DA72BA6D0350021B9B1 /* UIKit-ImageCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-ImageCollectionView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9A7DAA2BA6D0350021B9B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B9A7DAC2BA6D0350021B9B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7B9A7DAE2BA6D0350021B9B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7B9A7DAE2BA6D0350021B9B1 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		7B9A7DB32BA6D0360021B9B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B9A7DB62BA6D0360021B9B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B9A7DB82BA6D0360021B9B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,7 +67,7 @@
 		7B9A7DEC2BA71D990021B9B1 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		7B9A7DEF2BA725C10021B9B1 /* ListPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotos.swift; sourceTree = "<group>"; };
 		7B9A7DF22BA7410A0021B9B1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		7B9A7DF52BA741CC0021B9B1 /* ViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		7B9A7DF52BA741CC0021B9B1 /* CollectionViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		7B9A7DF82BA746900021B9B1 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		7B9A7DFA2BA84E1D0021B9B1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7B9A7DFD2BA855150021B9B1 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,8 @@
 		7B9A7E012BA861010021B9B1 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		7B9A7E032BA8651F0021B9B1 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7B9A7E072BA86E390021B9B1 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
+		7B9A7E092BA99FE20021B9B1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		7B9A7E0B2BA9A0480021B9B1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		951F5D49F429DE33D7A9E55D /* Pods-UIKit-ImageCollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKit-ImageCollectionView.debug.xcconfig"; path = "Target Support Files/Pods-UIKit-ImageCollectionView/Pods-UIKit-ImageCollectionView.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -231,8 +235,10 @@
 		7B9A7DF12BA740DB0021B9B1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7B9A7DAE2BA6D0350021B9B1 /* ViewController.swift */,
-				7B9A7DF52BA741CC0021B9B1 /* ViewController+CollectionView.swift */,
+				7B9A7E092BA99FE20021B9B1 /* TabBarViewController.swift */,
+				7B9A7DAE2BA6D0350021B9B1 /* CollectionViewController.swift */,
+				7B9A7DF52BA741CC0021B9B1 /* CollectionViewController+CollectionView.swift */,
+				7B9A7E0B2BA9A0480021B9B1 /* TableViewController.swift */,
 				7B9A7DF22BA7410A0021B9B1 /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
@@ -391,16 +397,18 @@
 				7B9A7DD62BA6FC470021B9B1 /* APIConstants.swift in Sources */,
 				7B9A7DD22BA6F2AE0021B9B1 /* APIManagerProtocol.swift in Sources */,
 				7B9A7DD42BA6F2F10021B9B1 /* APIManager.swift in Sources */,
+				7B9A7E0A2BA99FE20021B9B1 /* TabBarViewController.swift in Sources */,
 				7B9A7DD82BA702F00021B9B1 /* ListPhotosRequest.swift in Sources */,
-				7B9A7DAF2BA6D0350021B9B1 /* ViewController.swift in Sources */,
+				7B9A7DAF2BA6D0350021B9B1 /* CollectionViewController.swift in Sources */,
 				7B9A7E002BA85A2C0021B9B1 /* CameraIconLabel.swift in Sources */,
 				7B9A7DDD2BA706C20021B9B1 /* Photo.swift in Sources */,
 				7B9A7DFE2BA855150021B9B1 /* UserProfileView.swift in Sources */,
-				7B9A7DF62BA741CC0021B9B1 /* ViewController+CollectionView.swift in Sources */,
+				7B9A7DF62BA741CC0021B9B1 /* CollectionViewController+CollectionView.swift in Sources */,
 				7B9A7DF02BA725C10021B9B1 /* ListPhotos.swift in Sources */,
 				7B9A7E082BA86E390021B9B1 /* Spacing.swift in Sources */,
 				7B9A7DAB2BA6D0350021B9B1 /* AppDelegate.swift in Sources */,
 				7B9A7DF32BA7410A0021B9B1 /* DetailViewController.swift in Sources */,
+				7B9A7E0C2BA9A0480021B9B1 /* TableViewController.swift in Sources */,
 				7B9A7DED2BA71D990021B9B1 /* UIImageView.swift in Sources */,
 				7B9A7DE72BA7115A0021B9B1 /* UIKit-ImageCollectionView+Bundle.swift in Sources */,
 				7B9A7DD02BA6F2560021B9B1 /* RequestManager.swift in Sources */,
