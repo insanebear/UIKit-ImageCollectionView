@@ -24,7 +24,7 @@ class UserProfileView: UIView {
         return view
     } ()
     
-    private let numOfTotalPhotosLabel = CameraIconLabel()
+    private let numOfTotalPhotosLabel = IconLabel(icon: .camera)
     
     private let usernameLabel: UILabel = {
         let label = UILabel()
