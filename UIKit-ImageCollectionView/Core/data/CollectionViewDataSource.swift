@@ -29,6 +29,9 @@ class CollectionViewDataSource: UICollectionViewDiffableDataSource<Int, Photo> {
         snapshot.appendSections([0])
         snapshot.appendItems(dataList)
         
-        apply(snapshot, animatingDifferences: false)
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            apply(snapshot, animatingDifferences: false)
+        }
     }
 }
