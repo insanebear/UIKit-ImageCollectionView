@@ -67,7 +67,6 @@ extension CollectionViewController {
         
         // set a data source for the collectionView
         self.collectionView.dataSource = self.dataSource
-        self.dataSource.updateSnapshot(dataList: photoList)
     }
 }
 
@@ -75,7 +74,7 @@ extension CollectionViewController {
 
 extension CollectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let photo = photoList[indexPath.row]
+        let photo = photoViewModel.photoList[indexPath.row]
         let vc = DetailViewController()
         vc.configure(photo: photo)
         

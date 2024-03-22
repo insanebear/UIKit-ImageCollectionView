@@ -6,16 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 class TableViewController: UIViewController {
     var tableView: UITableView!
     var dataSource: TableViewDataSource!
     
-    var photoList: [Photo] = [] {
-        didSet {
-            self.dataSource.updateSnapshot(dataList: photoList)
-        }
-    }
+    var cancellables = Set<AnyCancellable>()
+    var photoViewModel = PhotoViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +21,16 @@ class TableViewController: UIViewController {
         self.view.backgroundColor = .backgroundColor
         
         setupTableView()
-        requestData(numOfPhotos: 100)
+        setViewModel()
+        
+        photoViewModel.requestData(numOfPhotos: 100)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        // remove "Back" string in the backButton
+        self.tabBarController?.navigationItem.backButtonTitle = ""
+        
+        // deselect row
         if let indexPath = self.tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
         }
@@ -61,35 +65,15 @@ class TableViewController: UIViewController {
         
         // set a data source for the tableView
         self.tableView.dataSource = self.dataSource
-        self.dataSource.updateSnapshot(dataList: photoList)
     }
     
-    func requestData(numOfPhotos: Int = 10) {
-        /// Unsplash API provides maxium 30 photos at a request. (`perPage`)
-        let rm = RequestManager.shared
-        var perPage = numOfPhotos > 30 ? 30 : numOfPhotos
-        var currentPage = 1
-        
-        Task {
-            while photoList.count < numOfPhotos {
-                do {
-                    // Repeat requests until photoList contains the desired number of photos.
-                    let listPhotosParam = ListPhotos(page: currentPage, perPage: perPage, orderBy: .latest)
-                    let request = ListPhotosRequest(parameters: listPhotosParam)
-                    
-                    let photos = try await rm.perform(request)
-                    photoList.append(contentsOf: photos) // append the list of Photos
-                    
-                    currentPage += 1
-                    
-                    let leftover = numOfPhotos - photoList.count
-                    perPage = leftover > 30 ? 30 : leftover
-                    
-                } catch (let error) {
-                    debugPrint(error)
-                }
+    func setViewModel() {
+        photoViewModel.$photoList
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] photoList in
+                self?.dataSource.updateSnapshot(dataList: photoList)
             }
-        }
+            .store(in: &cancellables)
     }
 }
 
@@ -97,7 +81,7 @@ class TableViewController: UIViewController {
 
 extension TableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let photo = photoList[indexPath.row]
+        let photo = photoViewModel.photoList[indexPath.row]
         let vc = DetailViewController()
         vc.configure(photo: photo)
         
